@@ -1,5 +1,5 @@
 import React, { VoidFunctionComponent } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Navigate, Routes, Route } from "react-router-dom";
 import Landing from "./pages/Landing";
 
 const Router: VoidFunctionComponent = () => {
@@ -7,6 +7,7 @@ const Router: VoidFunctionComponent = () => {
     <Routes>
       <Route path="/">
         <Route index element={<Landing />} />
+        <Route path="redirect" element={<Navigate to="/" />} />
       </Route>
     </Routes>
   );

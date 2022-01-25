@@ -1,13 +1,12 @@
 import React, { VoidFunctionComponent } from "react";
-import NavigationBar from "./components/NavigationBar/NavigationBar";
 import Router from "./Router";
+import Layout from "./components/Layout";
 
 const App: VoidFunctionComponent = () => {
   return (
-    <>
-      <NavigationBar />
+    <Layout>
       <Router />
-    </>
+    </Layout>
   );
 };
 

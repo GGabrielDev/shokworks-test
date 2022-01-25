@@ -1,4 +1,8 @@
-import React, { ReactNode, VoidFunctionComponent } from "react";
+import React, {
+  MouseEventHandler,
+  ReactNode,
+  VoidFunctionComponent,
+} from "react";
 import { Link } from "react-router-dom";
 import { FaBars, FaSearch } from "react-icons/fa";
 import {
@@ -12,53 +16,24 @@ import {
   NavMenu,
   SearchBar,
   SearchIcon,
-  StylishLink,
 } from "./NavigationBarComponents";
 
-const navigationBarLink = [
-  {
-    name: "Home",
-    linkTo: "/",
-  },
-  {
-    name: "About",
-    linkTo: "/redirect",
-  },
-  {
-    name: "Portfolio",
-    linkTo: "/redirect",
-  },
-  {
-    name: "Product",
-    linkTo: "/redirect",
-  },
-  {
-    name: "Career",
-    linkTo: "/redirect",
-  },
-  {
-    name: "Blog",
-    linkTo: "/redirect",
-  },
-];
+type NavigationBarProps = {
+  toggle: MouseEventHandler;
+  navLinks: ReactNode[];
+};
 
-const NavigationBar: VoidFunctionComponent = () => {
-  const navLinks: ReactNode[] = [];
-  navigationBarLink.forEach((item) => {
-    navLinks.push(
-      <NavItem key={`Nav${item.name}`}>
-        <StylishLink to={item.linkTo}>{item.name}</StylishLink>
-      </NavItem>
-    );
-  });
-
+const NavigationBar: VoidFunctionComponent<NavigationBarProps> = ({
+  toggle,
+  navLinks,
+}) => {
   return (
     <NavBarWrapper>
       <Link to="/" style={{ display: "flex" }}>
         <Logo src={require("../../assets/img/MainLogo.png")} alt="Shokworks" />
       </Link>
       <NavBar>
-        <MobileIcon>
+        <MobileIcon onClick={toggle}>
           <FaBars />
         </MobileIcon>
         <NavMenu>
@@ -72,7 +47,7 @@ const NavigationBar: VoidFunctionComponent = () => {
           <NavItem>
             <ContactButton to="/redirect" children="Contact Us" />
           </NavItem>
-          <MobileIcon $primary>
+          <MobileIcon $primary onClick={toggle}>
             <FaBars />
           </MobileIcon>
         </NavMenu>

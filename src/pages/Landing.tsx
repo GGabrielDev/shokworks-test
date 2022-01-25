@@ -1,7 +1,8 @@
 import React, { VoidFunctionComponent } from "react";
+import LandingView from "../components/LandingView/LandingView";
 
 const Landing: VoidFunctionComponent = () => {
-  return <></>;
+  return <LandingView />;
 };
 
 export default Landing;

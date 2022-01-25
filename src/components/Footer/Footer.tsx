@@ -21,6 +21,7 @@ import {
   FooterSocialLinks,
   FooterWrapper,
 } from "./FooterComponents";
+import { Logo } from "../AbstractedComponents";
 
 const footerSocial = [
   {
@@ -59,7 +60,8 @@ const Footer: VoidFunctionComponent<FooterProps> = ({ navLinks }) => {
   });
 
   return (
-    <>
+    <FooterWrapper $primary>
+      <Logo />
       <FooterWrapper>
         <FooterSection>
           <FooterSectionTitle>Contact</FooterSectionTitle>
@@ -99,16 +101,28 @@ const Footer: VoidFunctionComponent<FooterProps> = ({ navLinks }) => {
           <FooterSection>
             <FooterSectionTitle>Follow Us</FooterSectionTitle>
             <FooterSocialIcons>
-              <FooterSocialIcon $color="transparent linear-gradient(45deg, #6362D7 0%, #FF8FE2 100%) 0% 0% no-repeat padding-box;">
+              <FooterSocialIcon
+                $color="transparent linear-gradient(45deg, #6362D7 0%, #FF8FE2 100%) 0% 0% no-repeat padding-box;"
+                href="https://www.facebook.com"
+              >
                 <FaFacebookF />
               </FooterSocialIcon>
-              <FooterSocialIcon $color="transparent linear-gradient(23deg, #00B56C 0%, #1DBE75 22%, #68D58C 68%, #9EE69D 100%) 0% 0% no-repeat padding-box;">
+              <FooterSocialIcon
+                $color="transparent linear-gradient(23deg, #00B56C 0%, #1DBE75 22%, #68D58C 68%, #9EE69D 100%) 0% 0% no-repeat padding-box;"
+                href="https://www.skype.com"
+              >
                 <AiOutlineSkype />
               </FooterSocialIcon>
-              <FooterSocialIcon $color="transparent linear-gradient(90deg, #FF9AB6 0%, #F03295 99%, #F03295 100%) 0% 0% no-repeat padding-box;">
+              <FooterSocialIcon
+                $color="transparent linear-gradient(90deg, #FF9AB6 0%, #F03295 99%, #F03295 100%) 0% 0% no-repeat padding-box;"
+                href="https://www.linkedin.com"
+              >
                 <FaLinkedinIn />
               </FooterSocialIcon>
-              <FooterSocialIcon $color="transparent linear-gradient(47deg, #F09376 0%, #F0DB79 100%) 0% 0% no-repeat padding-box;">
+              <FooterSocialIcon
+                $color="transparent linear-gradient(47deg, #F09376 0%, #F0DB79 100%) 0% 0% no-repeat padding-box;"
+                href="https://www.instagram.com"
+              >
                 <FaInstagram />
               </FooterSocialIcon>
             </FooterSocialIcons>
@@ -119,7 +133,7 @@ const Footer: VoidFunctionComponent<FooterProps> = ({ navLinks }) => {
         <FooterBottom1 />
         <FooterBottom2 />
       </FooterBottomWrapper>
-    </>
+    </FooterWrapper>
   );
 };
 

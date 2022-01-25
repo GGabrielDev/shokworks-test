@@ -4,15 +4,9 @@ import { mediaSizes } from "../assets/CSSMediaSizes";
 
 const { mobileL } = mediaSizes;
 
-// Component Prop Types
-
-type MainButtonProps = {
-  $primary?: boolean;
-};
-
 // Abstracted CSS Rule sets
 
-export const MainButtonCSS = css<MainButtonProps>`
+export const MainButtonCSS = css`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,13 +18,13 @@ export const MainButtonCSS = css<MainButtonProps>`
   color: #fff;
   background: transparent linear-gradient(248deg, #1b92c8 0%, #2c3636 100%) 0%
     0% no-repeat padding-box;
+  text-transform: capitalize;
 `;
 
 // Styled Components
 
 export const LogoImg = styled.img`
   display: flex;
-  width: auto;
   align-self: center;
   padding: 0 3em;
 

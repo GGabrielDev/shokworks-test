@@ -2,16 +2,33 @@ import styled from "styled-components";
 
 // Component Props Types
 
+type FooterWrapperProps = {
+  $primary?: boolean;
+};
+
 type SocialIconsProps = {
   $color?: string;
 };
 
 // Styled Components
 
-export const FooterWrapper = styled.div`
+export const FooterWrapper = styled.div<FooterWrapperProps>`
   display: flex;
+  height: inherit;
+  width: inherit;
   align-items: top;
   justify-content: center;
+  gap: 1em;
+
+  ${({ $primary }) =>
+    $primary
+      ? `
+				flex-direction: column;
+				gap: 4em;
+		  `
+      : `
+				flex-wrap: wrap;
+			`}
 `;
 
 export const FooterSection = styled.div`
@@ -19,7 +36,6 @@ export const FooterSection = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5em;
-  padding: 0 1em;
   width: 15em;
   height: auto;
 `;
@@ -67,11 +83,12 @@ export const FooterBottomWrapper = styled.div`
   width: 100%;
   height: 15em;
   overflow: hidden;
-  margin-top: -1em;
+  margin-top: -6em;
 `;
 
 export const FooterBottom1 = styled.div`
   position: absolute;
+  z-index: -2;
   bottom: 0;
   width: 100%;
   height: 110%;
@@ -85,7 +102,7 @@ export const FooterBottom1 = styled.div`
 export const FooterBottom2 = styled.div`
   position: absolute;
   bottom: 0;
-  z-index: 1;
+  z-index: -1;
   width: 100%;
   height: 110%;
   margin: 0 auto;

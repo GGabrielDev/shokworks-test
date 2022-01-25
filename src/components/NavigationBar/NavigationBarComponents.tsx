@@ -5,7 +5,7 @@ import { MainButtonCSS } from "../AbstractedComponents";
 import { mediaSizes } from "../../assets/CSSMediaSizes";
 import { maxMargin } from "../../assets/CSSRules";
 
-const { desktopM, desktopS, tablet, mobileL, mobileS } = mediaSizes;
+const { desktopM, desktopS, tablet, mobileS } = mediaSizes;
 
 // Component Props Types
 
@@ -31,6 +31,7 @@ export const NavBarWrapper = styled.nav`
   top: 0;
   height: 6em;
   width: 100%;
+  background-color: #fff;
 `;
 
 export const NavBar = styled.div`
@@ -41,19 +42,6 @@ export const NavBar = styled.div`
 
   @media screen and (max-width: ${desktopS}) {
     transition: 0.8s all ease;
-  }
-`;
-
-export const Logo = styled.img`
-  display: flex;
-  width: auto;
-  align-self: center;
-  padding: 0 3em;
-
-  @media screen and (max-width: ${mobileL}) {
-    padding: 0 1.5em;
-    width: 70%;
-    height: auto;
   }
 `;
 
@@ -124,7 +112,7 @@ export const StylishLink = styled(NavLink)`
 export const SearchBar = styled.input<SidebarVariantProps>`
   height: 2em;
   width: 18em;
-  padding: 0.5em;
+  padding: 0.5em 1em;
   border: 1px solid #c6baf8;
   border-radius: 4px;
   opacity: 1;
@@ -148,16 +136,13 @@ export const SearchBar = styled.input<SidebarVariantProps>`
 export const SearchIcon = styled.div<SidebarVariantProps>`
   position: relative;
   top: 2px;
-  margin-left: -3em;
-  margin-right: 3em;
+  margin-left: -2em;
+  margin-right: 2em;
   color: #7d8693;
 
   ${({ $onSidebar }) =>
     $onSidebar
       ? `
-				margin-left: -2em;
-				margin-right: 2em;
-
 				@media screen and (min-width: ${desktopS}) {
 				  display: none;
 			  }

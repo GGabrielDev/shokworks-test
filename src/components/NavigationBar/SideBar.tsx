@@ -43,7 +43,7 @@ const SideBar: VoidFunctionComponent<SideBarProps> = ({
         </NavItem>
         <NavLinksWrapper $onSidebar>{navLinks}</NavLinksWrapper>
         <NavItem>
-          <ContactButton $onSidebar to="/redirect">
+          <ContactButton $primary $onSidebar to="/redirect">
             Contact Us
           </ContactButton>
         </NavItem>

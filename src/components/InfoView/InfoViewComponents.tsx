@@ -8,6 +8,10 @@ const { mobileL, tablet } = mediaSizes;
 
 // Components Props Types
 
+type InfoCardProps = {
+  $altFlex?: boolean;
+};
+
 type InfoBackCircleProps = {
   $transform?: string;
 };
@@ -28,14 +32,20 @@ type ImageElipsisProps = {
 
 // Styled Components
 
-export const InfoCard = styled.div`
+export const InfoCard = styled.div<InfoCardProps>`
   ${maxMargin}
   width: 100%;
-  height: 75%;
+  height: auto;
   display: flex;
+  flex-direction: ${({ $altFlex }) => ($altFlex ? "row-reverse" : "row")};
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1em;
+  gap: 2em;
+
+  @media screen and (max-width: ${tablet}) {
+    gap: 0em;
+    margin: 4em 0;
+  }
 `;
 
 export const InfoContentWrapper = styled.div`
@@ -66,7 +76,7 @@ export const InfoButton = styled(Link)`
 
 export const InfoImageWrapper = styled.div`
   display: flex;
-  width: 30em;
+  width: 35em;
   align-items: center;
   justify-content: center;
   position: relative;
@@ -74,7 +84,7 @@ export const InfoImageWrapper = styled.div`
 
 export const InfoImage = styled.img`
   width: auto;
-  height: 50%;
+  height: 75%;
 
   @media screen and (max-width: ${mobileL}) {
     width: 90%;
@@ -83,11 +93,11 @@ export const InfoImage = styled.img`
 `;
 
 export const InfoBackCircle = styled.div<InfoBackCircleProps>`
-  width: 300px;
-  height: 300px;
+  width: 450px;
+  height: 450px;
   position: absolute;
-  top: 25%;
-  right: 20%;
+  top: 15%;
+  right: 10%;
   z-index: -5;
   border-radius: 50%;
   background: #0000ff05 0% 0% no-repeat padding-box;

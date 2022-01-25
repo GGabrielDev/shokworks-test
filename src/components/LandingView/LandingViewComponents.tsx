@@ -12,10 +12,6 @@ type LandingBGProps = {
   $bg: string;
 };
 
-type ButtonProps = {
-  $primary?: boolean;
-};
-
 // Styled Components
 
 export const LandingBG = styled.div<LandingBGProps>`
@@ -56,19 +52,6 @@ export const LandingButtons = styled.div`
   }
 `;
 
-export const LandingLinkButton = styled(Link)<ButtonProps>`
+export const LandingLinkButton = styled(Link)`
   ${MainButtonCSS}
-  ${({ $primary }) =>
-    $primary
-      ? ``
-      : `
-				color: #185F7F;
-				background: transparent;
-				border: 1px solid #185F7F;
-			  opacity: 1;
-			`}
-
-	@media screen and (max-width: ${mobileL}) {
-    width: 8em;
-  }
 `;

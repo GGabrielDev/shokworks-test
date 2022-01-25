@@ -4,9 +4,15 @@ import { mediaSizes } from "../assets/CSSMediaSizes";
 
 const { mobileL } = mediaSizes;
 
+// Component Props Types
+
+type ButtonProps = {
+  $primary?: boolean;
+};
+
 // Abstracted CSS Rule sets
 
-export const MainButtonCSS = css`
+export const MainButtonCSS = css<ButtonProps>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,6 +25,20 @@ export const MainButtonCSS = css`
   background: transparent linear-gradient(248deg, #1b92c8 0%, #2c3636 100%) 0%
     0% no-repeat padding-box;
   text-transform: capitalize;
+
+  ${({ $primary }) =>
+    $primary
+      ? ``
+      : `
+				color: #185F7F;
+				background: transparent;
+				border: 1px solid #185F7F;
+			  opacity: 1;
+			`}
+
+  @media screen and (max-width: ${mobileL}) {
+    width: 8em;
+  }
 `;
 
 // Styled Components

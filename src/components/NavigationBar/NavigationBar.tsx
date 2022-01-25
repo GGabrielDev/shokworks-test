@@ -45,7 +45,7 @@ const NavigationBar: VoidFunctionComponent<NavigationBarProps> = ({
             </SearchIcon>
           </NavItem>
           <NavItem>
-            <ContactButton to="/redirect" children="Contact Us" />
+            <ContactButton $primary to="/redirect" children="Contact Us" />
           </NavItem>
           <MobileIcon $primary onClick={toggle}>
             <FaBars />

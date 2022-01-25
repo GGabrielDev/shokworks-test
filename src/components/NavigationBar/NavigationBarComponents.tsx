@@ -19,6 +19,7 @@ type SidebarProps = {
 
 type SidebarVariantProps = {
   $onSidebar?: boolean;
+  $primary?: boolean;
 };
 
 // Styled Components of Navigation Bar

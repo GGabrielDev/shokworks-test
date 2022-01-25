@@ -8,6 +8,7 @@ import PropTypes from "prop-types";
 import NavigationBar from "./NavigationBar/NavigationBar";
 import SideBar from "./NavigationBar/SideBar";
 import { NavItem, StylishLink } from "./NavigationBar/NavigationBarComponents";
+import Footer from "./Footer/Footer";
 
 type ComponentChilds = {
   children: ReactNode;
@@ -64,6 +65,7 @@ const Layout: VoidFunctionComponent<ComponentChilds> = ({ children }) => {
         navLinks={navElementsArray}
       />
       {children}
+      <Footer navLinks={navElementsArray} />
     </>
   );
 };

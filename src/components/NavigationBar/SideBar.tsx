@@ -6,6 +6,7 @@ import React, {
 import { FaSearch } from "react-icons/fa";
 import {
   Sidebar,
+  SidebarWrapper,
   Icon,
   CloseIcon,
   BGFilter,
@@ -28,26 +29,26 @@ const SideBar: VoidFunctionComponent<SideBarProps> = ({
   navLinks,
 }) => {
   return (
-    <>
+    <SidebarWrapper>
       <BGFilter $isOpen={isOpen} onClick={toggle} />
       <Sidebar $isOpen={isOpen} onClick={toggle}>
         <Icon onClick={toggle}>
           <CloseIcon />
         </Icon>
-        <NavLinksWrapper $onSidebar>{navLinks}</NavLinksWrapper>
         <NavItem>
           <SearchBar $onSidebar placeholder="Search Here" />
           <SearchIcon $onSidebar>
             <FaSearch />
           </SearchIcon>
         </NavItem>
+        <NavLinksWrapper $onSidebar>{navLinks}</NavLinksWrapper>
         <NavItem>
           <ContactButton $onSidebar to="/redirect">
             Contact Us
           </ContactButton>
         </NavItem>
       </Sidebar>
-    </>
+    </SidebarWrapper>
   );
 };
 

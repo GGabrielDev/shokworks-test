@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { FaTimes } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import { MainButtonCSS } from "../AbstractedComponents";
 import { mediaSizes } from "../../assets/CSSMediaSizes";
 import { maxMargin } from "../../assets/CSSRules";
 
@@ -59,6 +60,7 @@ export const Logo = styled.img`
 export const NavMenu = styled.ul`
   display: flex;
   align-items: center;
+  gap: 1.5em;
   margin-right: 1.5em;
   list-style: none;
   text-align: center;
@@ -71,12 +73,12 @@ export const NavMenu = styled.ul`
 export const NavLinksWrapper = styled.div<SidebarVariantProps>`
   display: flex;
   align-items: center;
+  gap: 1.5em;
 
   ${({ $onSidebar }) =>
     $onSidebar
       ? `
 				flex-direction: column;
-				gap: 1.5em;
 
 				@media screen and (min-width: ${desktopM}) {
 					display: none;
@@ -99,7 +101,6 @@ export const NavItem = styled.li`
 export const StylishLink = styled(NavLink)`
   display: flex;
   align-items: center;
-  padding: 0 1.5em;
   color: #000;
   cursor: pointer;
   text-decoration: none;
@@ -112,8 +113,9 @@ export const StylishLink = styled(NavLink)`
       content: "";
       position: relative;
       top: 1em;
-      left: 50%;
-      border: 4px solid #185f7f;
+      left: calc(50% - 0.25em);
+      margin-right: -0.5em;
+      border: 0.25em solid #185f7f;
       border-radius: 100%;
     }
   }
@@ -123,7 +125,6 @@ export const SearchBar = styled.input<SidebarVariantProps>`
   height: 2em;
   width: 18em;
   padding: 0.5em;
-  margin: 0 1.5em;
   border: 1px solid #c6baf8;
   border-radius: 4px;
   opacity: 1;
@@ -169,19 +170,7 @@ export const SearchIcon = styled.div<SidebarVariantProps>`
 `;
 
 export const ContactButton = styled(NavLink)<SidebarVariantProps>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 2.7em;
-  width: 10em;
-  margin-right: 1.5em;
-  border-radius: 5px;
-  cursor: pointer;
-  text-decoration: none;
-  color: #fff;
-  background: transparent linear-gradient(248deg, #1b92c8 0%, #2c3636 100%) 0%
-    0% no-repeat padding-box;
-
+  ${MainButtonCSS}
   @media screen and (min-width: ${tablet}) and (max-width: ${desktopS}) {
     margin-right: 3.5em;
   }
@@ -223,13 +212,18 @@ export const MobileIcon = styled.div<MobileIconProps>`
 
 // Styled Components of Sidebar
 
+export const SidebarWrapper = styled.div<SidebarProps>`
+  position: relative;
+  overflow: ${({ $isOpen }) => ($isOpen ? "" : "hidden")};
+`;
+
 export const Sidebar = styled.aside<SidebarProps>`
   position: fixed;
   z-index: 999;
   top: 0;
   right: ${({ $isOpen }) => ($isOpen ? "0" : "-100%")};
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
   gap: 1.5em;
   width: ${mobileS};
   height: 100%;
@@ -241,12 +235,12 @@ export const Sidebar = styled.aside<SidebarProps>`
 `;
 
 export const BGFilter = styled.div<SidebarProps>`
-  position: absolute;
+  position: fixed;
   top: 0;
   right: ${({ $isOpen }) => ($isOpen ? "0" : "-100%")};
   z-index: 998;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: #000000;
   opacity: ${({ $isOpen }) => ($isOpen ? "10%" : "0%")};
   transition: 0.1s ease-in-out;

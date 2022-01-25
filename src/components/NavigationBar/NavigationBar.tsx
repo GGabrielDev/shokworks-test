@@ -5,9 +5,9 @@ import React, {
 } from "react";
 import { Link } from "react-router-dom";
 import { FaBars, FaSearch } from "react-icons/fa";
+import { Logo } from "../AbstractedComponents";
 import {
   ContactButton,
-  Logo,
   MobileIcon,
   NavBar,
   NavBarWrapper,
@@ -30,7 +30,7 @@ const NavigationBar: VoidFunctionComponent<NavigationBarProps> = ({
   return (
     <NavBarWrapper>
       <Link to="/" style={{ display: "flex" }}>
-        <Logo src={require("../../assets/img/MainLogo.png")} alt="Shokworks" />
+        <Logo />
       </Link>
       <NavBar>
         <MobileIcon onClick={toggle}>

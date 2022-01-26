@@ -1,4 +1,3 @@
-import { ReactNode, VoidFunctionComponent } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { MainButtonCSS } from "../AbstractedComponents";

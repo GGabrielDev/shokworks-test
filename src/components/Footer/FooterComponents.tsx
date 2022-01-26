@@ -16,6 +16,7 @@ export const FooterWrapper = styled.div<FooterWrapperProps>`
   display: flex;
   height: inherit;
   width: inherit;
+  margin-top: 2em;
   align-items: top;
   justify-content: center;
   gap: 1em;

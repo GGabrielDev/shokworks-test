@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { MainButtonCSS } from "../AbstractedComponents";
 import { mediaSizes } from "../../assets/CSSMediaSizes";
-import { maxMargin } from "../../assets/CSSRules";
 
 const { mobileL, tablet } = mediaSizes;
 
@@ -33,7 +32,6 @@ type ImageElipsisProps = {
 // Styled Components
 
 export const InfoCard = styled.div<InfoCardProps>`
-  ${maxMargin}
   width: 100%;
   height: auto;
   display: flex;
@@ -54,7 +52,7 @@ export const InfoContentWrapper = styled.div`
   gap: 2em;
   width: 30em;
   align-items: flex-start;
-	justify-content: center;
+  justify-content: center;
 
   @media screen and (max-width: ${tablet}) {
     padding: 0 2em;
@@ -80,6 +78,7 @@ export const InfoImageWrapper = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
+  overflow: hidden;
 `;
 
 export const InfoImage = styled.img`

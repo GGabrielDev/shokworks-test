@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.js": "/shokworks-test/static/js/main.3c5c1d2d.js",
+    "main.js": "/shokworks-test/static/js/main.b1c00e28.js",
     "static/media/InfoImage1.png": "/shokworks-test/static/media/InfoImage1.f8d0c35a1dc6eac185fc.png",
     "static/media/FormPicture.png": "/shokworks-test/static/media/FormPicture.7a25894a2a89f9ce626a.png",
     "static/media/InfoImage2.png": "/shokworks-test/static/media/InfoImage2.e564ccb982b28e85aea1.png",
     "static/media/LandingPicture.png": "/shokworks-test/static/media/LandingPicture.e73fab24f82a7b17b1b8.png",
     "static/media/LandingBG.png": "/shokworks-test/static/media/LandingBG.37eebaf6d9a2dfd97653.png",
     "index.html": "/shokworks-test/index.html",
-    "main.3c5c1d2d.js.map": "/shokworks-test/static/js/main.3c5c1d2d.js.map"
+    "main.b1c00e28.js.map": "/shokworks-test/static/js/main.b1c00e28.js.map"
   },
   "entrypoints": [
-    "static/js/main.3c5c1d2d.js"
+    "static/js/main.b1c00e28.js"
   ]
 }
